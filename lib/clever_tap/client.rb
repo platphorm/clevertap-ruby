@@ -42,10 +42,12 @@ class CleverTap
     end
 
     def post(*args, &block)
+      Rails.logger.infox("CleverTap API Call to endpoint #{args[0]}", params: args[1])
       connection.post(*args, &block)
     end
 
     def get(*args, &block)
+      Rails.logger.infox("CleverTap API Call to endpoint #{args[0]}", params: args[1])
       connection.get(*args, &block)
     end
 
